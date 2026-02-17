@@ -20,13 +20,17 @@
     "@solana/web3.js": "^1.98.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.563.0",
     "next": "16.1.6",
     "next-auth": "^5.0.0-beta.30",
     "radix-ui": "^1.4.3",
     "react": "19.2.3",
+    "react-calendar-heatmap": "^1.10.0",
     "react-dom": "19.2.3",
     "react-markdown": "^10.1.0",
+    "recharts": "^3.7.0",
+    "styled-components": "^6.3.9",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

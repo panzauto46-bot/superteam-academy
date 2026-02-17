@@ -17,8 +17,8 @@ const SimpleTabs = ({ children, defaultValue }: any) => {
                         key={child.props.value}
                         onClick={() => setActive(child.props.value)}
                         className={`px-4 py-2 text-sm font-medium transition-colors relative ${active === child.props.value
-                                ? 'text-green-500 border-b-2 border-green-500'
-                                : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
+                            ? 'text-green-500 border-b-2 border-green-500'
+                            : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200'
                             }`}
                     >
                         {child.props.children}
@@ -35,7 +35,7 @@ const SimpleTabs = ({ children, defaultValue }: any) => {
 
 export default function SettingsPage() {
     const { theme, toggleTheme } = useTheme();
-    const { language, setLanguage, t } = useLang();
+    const { lang: language, setLang: setLanguage, t } = useLang();
     const { user, logout } = useAuth();
     const router = useRouter();
 
@@ -63,10 +63,10 @@ export default function SettingsPage() {
                         <div className="space-y-6">
                             <div className="flex items-center gap-6 pb-6 border-b border-gray-100 dark:border-gray-800">
                                 <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-3xl font-bold text-white shadow-inner">
-                                    {user?.name?.[0] || 'U'}
+                                    {user?.displayName?.[0] || 'U'}
                                 </div>
                                 <div>
-                                    <h2 className="text-xl font-bold dark:text-white">{user?.name || 'Anonymous Builder'}</h2>
+                                    <h2 className="text-xl font-bold dark:text-white">{user?.displayName || 'Anonymous Builder'}</h2>
                                     <p className="text-gray-500 dark:text-gray-400">{user?.email || 'No email connected'}</p>
                                     <div className="mt-2 text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded inline-block">
                                         Level 5 Explorer
@@ -79,14 +79,14 @@ export default function SettingsPage() {
                                     <label className="block text-sm font-medium mb-1 dark:text-gray-300">Display Name</label>
                                     <input
                                         type="text"
-                                        defaultValue={user?.name || ''}
+                                        defaultValue={user?.displayName || ''}
                                         className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent dark:text-white focus:ring-2 focus:ring-green-500 outline-none"
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-1 dark:text-gray-300">Wallet Address</label>
                                     <div className="w-full px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-500 font-mono text-sm truncate">
-                                        {user?.wallet || 'Not connected'}
+                                        {user?.walletAddress || 'Not connected'}
                                     </div>
                                 </div>
                             </div>

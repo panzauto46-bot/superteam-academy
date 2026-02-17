@@ -50,11 +50,11 @@ export default function DashboardPage() {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col md:flex-row gap-6 items-center mb-8">
         <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
-          {user?.name?.[0] || 'U'}
+          {user?.displayName?.[0] || 'U'}
         </div>
         <div>
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-            Welcome back, {user?.name || 'Builder'}!
+            Welcome back, {user?.displayName || 'Builder'}!
           </h1>
           <p className="text-slate-500 dark:text-gray-400">
             Let's continue your journey to becoming a Solana expert.

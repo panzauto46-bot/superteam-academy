@@ -1,8 +1,9 @@
 "use client";
 
 import { createContext, useContext, useMemo, type ReactNode } from "react";
-type IEnrollmentService,
-type ILessonCompletionService,
+import {
+  type IEnrollmentService,
+  type ILessonCompletionService,
 } from "@/services/interfaces";
 
 interface ServiceContextType {

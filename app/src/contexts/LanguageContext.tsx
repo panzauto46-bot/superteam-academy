@@ -6,6 +6,8 @@ import { translations, type Lang } from '@/i18n/translations';
 interface LanguageContextType {
   lang: Lang;
   setLang: (lang: Lang) => void;
+  language: Lang;
+  setLanguage: (lang: Lang) => void;
   t: (key: string, params?: Record<string, string | number>) => string;
 }
 
@@ -28,7 +30,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t }}>
+    <LanguageContext.Provider value={{ lang, setLang, language: lang, setLanguage: setLang, t }}>
       {children}
     </LanguageContext.Provider>
   );
